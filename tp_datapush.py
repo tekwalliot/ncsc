@@ -1,25 +1,27 @@
 import json
 import requests
+import random
 from datetime import datetime, timedelta
-from swpsdata.models import DeviceData
+from swpsdata.models import tp_DeviceData
 
 headers = {'Content-Type': 'text/json'}                                                                          
 url = "https://nredcap-api.smartcenter.co.in/api/FarmerInstallationData"
 url1 = 'https://nredcap-api.smartcenter.co.in/api/DayWiseData'                                
 url2 = 'https://nredcap-api.smartcenter.co.in/api/AgencyDeviceData'                                                  
-access = "$solar@ACCESS!17^"     
+tp = ""     
 
-serial_no=['18170']                                                                                                                                                     
+serial_no=['']                                                                                                                                                     
 
 for i in range(len(serial_no)):
   try:
      a = DeviceData.objects.values( ).get(devNo = serial_no[i])
      fardet = {
-          "agencykey":access,
+          "agencykey":tp,
           "first_Name": str(a['name']),
           "last_Name": " ",
           "gender": str(a['gender']),
-          "dob":" ",
+          #"dob":"{}-{}-{}".format(random.randint(1970,1988),random.randint(1,12),random.randint(1,28)),
+          "dob":str(a['dob']),
           "aadhar_No":a['adhaarNo'],
           "contactno": str(a['contactNo']),
           "address_1": str(a['address']),
@@ -53,8 +55,8 @@ for i in range(len(serial_no)):
           "total_Power": 4800,
           "voc": 720,
           "vmp": 575,
-          "imp": "8.4", 
-	    "isc": "9.5",
+          "imp": 8.4, 
+	     "isc": 9.5,
           "rotating_Frequency": "50 Hz",
           "controllerPowerCapacity": "5.0 Kw",
           "solarDCV": 750,
