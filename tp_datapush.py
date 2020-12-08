@@ -8,9 +8,9 @@ headers = {'Content-Type': 'text/json'}
 url = "https://nredcap-api.smartcenter.co.in/api/FarmerInstallationData"
 url1 = 'https://nredcap-api.smartcenter.co.in/api/DayWiseData'                                
 url2 = 'https://nredcap-api.smartcenter.co.in/api/AgencyDeviceData'                                                  
-tp = ""     
+tp = "117-118-258"     
 
-serial_no=['']                                                                                                                                                     
+serial_no=['65119406']                                                                                                                                                     
 
 for i in range(len(serial_no)):
   try:
@@ -34,33 +34,37 @@ for i in range(len(serial_no)):
           "longitude": str(a['longitude']),
           "latitude": str(a['latitude']),
           "deviceid": str(a['devNo']),
-          "mfg": str(a['conMake'] ),
+          "mfg": "Shakti",
+          #"mfg": str(a['conMake'] ),
           "sno": int(a['devNo']) ,
           "controller_Capacity": "5HP",
           "controller_Version": "",
-          "no_Of_Stages": "5",
-          "type": "AC",
-          "aC_Voltage": 415,
-          "aC_Current": 9.5,
+          "no_Of_Stages": "7",
+          "type": "DC",
+          "aC_Voltage": 360,
+          "aC_Current": 8.97,
           "date_Of_Installation": str(a['dateInst']),
-          "installer_Name": str(a['InstName']),
-          "installer_Serial_No": 0,
-          "motor_Manufacturer": str(a['pumpMfg']),
+          #"installer_Name": str(a['InstName']),
+          "installer_Name": "PPS Tirupathi",
+          "installer_Serial_No": 123,
+          #"motor_Manufacturer": str(a['pumpMfg']),
+          "motor_Manufacturer": "Shakti",
           "motor_Depth": 150,
           "motor_Capacity": "5 HP",
-          "controller_Motor_Distance": 10,
+          "controller_Motor_Distance": 20,
           "no_of_Panels_in_series": 16,
-          "no_of_Panels_in_Parallal":  0,
-          "panel_Wattage": 300,
-          "total_Power": 4800,
+          "no_of_Panels_in_Parallal":  1,
+          "panel_Wattage": 315,
+          "total_Power": 5040,
           "voc": 720,
-          "vmp": 575,
-          "imp": 8.4, 
-	     "isc": 9.5,
+          "vmp": 592,
+          "imp": 8.53, 
+	     "isc": 8.97,
           "rotating_Frequency": "50 Hz",
           "controllerPowerCapacity": "5.0 Kw",
           "solarDCV": 750,
-          "pvModuleMake": str(a['pvMake']),
+          "pvModuleMake": "TPSSL",
+          #"pvModuleMake": str(a['pvMake']),
      }
 
      data = json.dumps(fardet)
