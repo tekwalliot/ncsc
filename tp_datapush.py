@@ -8,7 +8,7 @@ headers = {'Content-Type': 'text/json'}
 url = "https://nredcap-api.smartcenter.co.in/api/FarmerInstallationData"
 url1 = 'https://nredcap-api.smartcenter.co.in/api/DayWiseData'                                
 url2 = 'https://nredcap-api.smartcenter.co.in/api/AgencyDeviceData'                                                  
-tp = "aaaa"     
+tp = "$89DA2@Tata!45^"     
 
 serial_no=['65119406']                                                                                                                                                     
 
@@ -61,7 +61,7 @@ for i in range(len(serial_no)):
           "imp": 8.53, 
 	     "isc": 8.97,
           "rotating_Frequency": "50 Hz",
-          "controllerPowerCapacity": "5.0 Kw",
+          "controllerPowerCapacity": "4.8 KW",
           "solarDCV": 750,
           "pvModuleMake": "TPSSL",
           #"pvModuleMake": str(a['pvMake']),
